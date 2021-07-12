@@ -21,7 +21,7 @@ import javax.persistence.Version;
 @DiscriminatorColumn(name = "type")
 public abstract class Client {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Version
 	private int version;
