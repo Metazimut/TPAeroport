@@ -1,5 +1,8 @@
 package sopra.formation.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +24,7 @@ public class CompagnieAerienne {
 	@Column(name="name")
 	private String nom;
 	@OneToMany(mappedBy="compagnieAerienne")
-	private CompagnieAerienneVol compagnieAerienneVol;
+	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<CompagnieAerienneVol>(); ;
 	
 	
 public CompagnieAerienne() {
@@ -58,11 +61,11 @@ public void setNom(String nom) {
 }
 
 
-public CompagnieAerienneVol getCompagnieAerienneVol() {
+public List<CompagnieAerienneVol> getCompagnieAerienneVol() {
 	return compagnieAerienneVol;
 }
 
-public void setCompagnieAerienneVol(CompagnieAerienneVol compagnieAerienneVol) {
+public void setCompagnieAerienneVol(List<CompagnieAerienneVol> compagnieAerienneVol) {
 	this.compagnieAerienneVol = compagnieAerienneVol;
 }
 
