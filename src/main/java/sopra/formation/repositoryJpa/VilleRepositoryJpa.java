@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.appli.Application;
+import sopra.formation.Application;
 import sopra.formation.model.Aeroport;
 import sopra.formation.model.Ville;
 import sopra.formation.repository.IVilleRepository;
