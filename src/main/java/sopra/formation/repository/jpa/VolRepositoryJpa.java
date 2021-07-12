@@ -1,5 +1,7 @@
 package sopra.formation.repository.jpa;
 
-public class VolRepositoryJpa {
+import sopra.formation.repository.IVolRepository;
 
+public class VolRepositoryJpa implements IVolRepository {
+	
 }

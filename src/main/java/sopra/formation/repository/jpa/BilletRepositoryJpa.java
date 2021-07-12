@@ -1,5 +1,7 @@
 package sopra.formation.repository.jpa;
 
-public class BilletRepositoryJpa {
+import sopra.formation.repository.IBilletRepository;
 
+public class BilletRepositoryJpa implements IBilletRepository {
+	
 }

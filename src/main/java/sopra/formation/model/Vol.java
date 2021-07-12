@@ -11,6 +11,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -35,6 +37,14 @@ public class Vol {
 	private int nbPlaceDispo;
 	@OneToMany(mappedBy = "vol")
 	private List<Billet> billetsVol = new ArrayList<Billet>();
+	@OneToMany(mappedBy = "vol")
+	private List<CompagnieAerienneVol> compagnieAerienneVols = new ArrayList<CompagnieAerienneVol>();
+	@ManyToOne
+	@JoinColumn(name = "aeroportDepart_id")
+	private Aeroport aeroportDepart;
+	@ManyToOne
+	@JoinColumn(name = "aeroportArrivee_id")
+	private Aeroport aeroportArrivee;
 	
 	public Vol() {
 		super();
@@ -87,6 +97,31 @@ public class Vol {
 
 	public void setBilletsVol(List<Billet> billetsVol) {
 		this.billetsVol = billetsVol;
+	}
+	
+
+	public List<CompagnieAerienneVol> getCompagnieAerienneVols() {
+		return compagnieAerienneVols;
+	}
+
+	public void setCompagnieAerienneVols(List<CompagnieAerienneVol> compagnieAerienneVols) {
+		this.compagnieAerienneVols = compagnieAerienneVols;
+	}
+
+	public Aeroport getAeroportDepart() {
+		return aeroportDepart;
+	}
+
+	public void setAeroportDepart(Aeroport aeroportDepart) {
+		this.aeroportDepart = aeroportDepart;
+	}
+
+	public Aeroport getAeroportArrivee() {
+		return aeroportArrivee;
+	}
+
+	public void setAeroportArrivee(Aeroport aeroportArrivee) {
+		this.aeroportArrivee = aeroportArrivee;
 	}
 
 	@Override

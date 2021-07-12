@@ -1,5 +1,7 @@
 package sopra.formation.repository.jpa;
 
-public class PassagerRepositoryJpa {
+import sopra.formation.repository.IPassagerRepository;
+
+public class PassagerRepositoryJpa implements IPassagerRepository {
 
 }

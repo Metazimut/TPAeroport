@@ -1,5 +1,7 @@
 package sopra.formation.repository.jpa;
 
-public class ReservationRepositoryJpa {
+import sopra.formation.repository.IReservationRepository;
+
+public class ReservationRepositoryJpa implements IReservationRepository {
 
 }
