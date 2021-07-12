@@ -21,6 +21,8 @@ public class Passager {
 	private int version;
 	@Column(name = "nom")
 	private String nom;
+	@Column(name = "prenom")
+	private String prenom;
 	@Column(name = "numeroIdentite")
 	private String numeroIdentite;
 	@Column(name = "typeIdentite")
@@ -79,6 +81,15 @@ public class Passager {
 
 	public void setReservation(Reservation reservation) {
 		this.reservation = reservation;
+	}
+	
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 	@Override

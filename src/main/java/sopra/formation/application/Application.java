@@ -15,7 +15,7 @@ import sopra.formation.repository.jpa.VolRepositoryJpa;
 public class Application {
 	private static Application instance = null;
 	
-	private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tpaeroport");
+	private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TPAeroport");
 
 	private final IBilletRepository billetRepo = new BilletRepositoryJpa();
 	private final IPassagerRepository passagerRepo = new PassagerRepositoryJpa();
