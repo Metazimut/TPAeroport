@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -22,6 +24,12 @@ public class Billet {
 	private String classe;
 	@Column(name = "prix")
 	private float prix;
+	@ManyToOne
+	@JoinColumn(name = "reservation_id")
+	private Reservation reservation;
+	@ManyToOne
+	@JoinColumn(name = "vol_id")
+	private Vol vol;
 	
 	public Billet() {
 		super();
@@ -66,11 +74,29 @@ public class Billet {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
+	
+	
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+
+	public Vol getVol() {
+		return vol;
+	}
+
+	public void setVol(Vol vol) {
+		this.vol = vol;
+	}
 
 	@Override
 	public String toString() {
 		return "Billet [id=" + id + ", version=" + version + ", numeroPlace=" + numeroPlace + ", classe=" + classe
-				+ ", prix=" + prix + "]";
+				+ ", prix=" + prix + ", reservation=" + reservation + ", vol=" + vol + "]";
 	}
 	
 }

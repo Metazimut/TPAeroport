@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -25,6 +26,8 @@ public class Passager {
 	@Column(name = "typeIdentite")
 	@Enumerated(EnumType.STRING)
 	private TypeIdentite typeIdentite;
+	@OneToOne(mappedBy = "passager")
+	private Reservation reservation;
 	
 	public Passager() {
 		super();
@@ -70,10 +73,17 @@ public class Passager {
 		this.typeIdentite = typeIdentite;
 	}
 
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+
 	@Override
 	public String toString() {
 		return "Passager [id=" + id + ", version=" + version + ", nom=" + nom + ", numeroIdentite=" + numeroIdentite
-				+ ", typeIdentite=" + typeIdentite + "]";
+				+ ", typeIdentite=" + typeIdentite + ", reservation=" + reservation + "]";
 	}
-	
 }

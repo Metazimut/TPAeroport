@@ -1,6 +1,8 @@
 package sopra.formation.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,6 +33,8 @@ public class Vol {
 	private StatutVol statut;
 	@Column(name = "nbPlaceDispo")
 	private int nbPlaceDispo;
+	@OneToMany(mappedBy = "vol")
+	private List<Billet> billetsVol = new ArrayList<Billet>();
 	
 	public Vol() {
 		super();
@@ -74,11 +79,20 @@ public class Vol {
 	public void setNbPlaceDispo(int nbPlaceDispo) {
 		this.nbPlaceDispo = nbPlaceDispo;
 	}
+	
+
+	public List<Billet> getBilletsVol() {
+		return billetsVol;
+	}
+
+	public void setBilletsVol(List<Billet> billetsVol) {
+		this.billetsVol = billetsVol;
+	}
 
 	@Override
 	public String toString() {
 		return "Vol [id=" + id + ", dtDepart=" + dtDepart + ", dtArrivee=" + dtArrivee + ", statut=" + statut
-				+ ", nbPlaceDispo=" + nbPlaceDispo + "]";
+				+ ", nbPlaceDispo=" + nbPlaceDispo + ", billetsVol=" + billetsVol + "]";
 	}
 	
 }
