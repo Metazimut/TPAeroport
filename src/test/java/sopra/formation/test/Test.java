@@ -7,7 +7,6 @@ import sopra.formation.Application;
 import sopra.formation.repository.*;
 import sopra.formation.model.*;
 
-import sopra.formation.application.Application;
 import sopra.formation.model.Passager;
 import sopra.formation.model.TypeIdentite;
 
