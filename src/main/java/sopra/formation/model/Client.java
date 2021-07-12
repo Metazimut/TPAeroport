@@ -32,8 +32,8 @@ public abstract class Client {
 	@OneToMany(mappedBy = "client")
 	private List<Adresse> adresses = new ArrayList<Adresse>();
 
-//	@OneToMany(mappedBy = "client")
-//	private List<Reservation> reservations = new ArrayList<Reservation>();
+	@OneToMany(mappedBy = "client")
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 	
 	public Client() {
 		super();
@@ -84,6 +84,20 @@ public abstract class Client {
 	public void setAdresses(List<Adresse> adresses) {
 		this.adresses = adresses;
 	}
+	
+	
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+
+
 
 	@Override
 	public String toString() {
