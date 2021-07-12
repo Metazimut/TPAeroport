@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.application.Application;
+import sopra.formation.Application;
 import sopra.formation.model.Reservation;
 import sopra.formation.repository.IReservationRepository;
 

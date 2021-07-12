@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "city")
+@Table(name = "Aeroport")
 public class Aeroport {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Aeroport {
 	private String nom;
 	@ManyToMany
 	@JoinTable(name = "ville_aeroport", joinColumns = @JoinColumn(name = "aeroport_id"), inverseJoinColumns = @JoinColumn(name = "ville_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
-			"trainer_id", "subject_id" }))
+			"aeroport_id", "ville_id" }))
 	private List<Ville> villes = new ArrayList<Ville>();
 
 	
