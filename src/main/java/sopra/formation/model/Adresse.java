@@ -37,18 +37,24 @@ public class Adresse {
 		super();
 	}
 
-
-
-	public Adresse(String rue, String complement, String codePostal, String ville, String pays, Client client) {
+	public Adresse(String rue, String complement, String codePostal, String ville, String pays) {
 		super();
 		this.rue = rue;
 		this.complement = complement;
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.pays = pays;
-		this.client = client;
 	}
 
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 
 	public int getVersion() {
@@ -56,11 +62,9 @@ public class Adresse {
 	}
 
 
-
 	public void setVersion(int version) {
 		this.version = version;
 	}
-
 
 
 	public String getRue() {
@@ -68,11 +72,9 @@ public class Adresse {
 	}
 
 
-
 	public void setRue(String rue) {
 		this.rue = rue;
 	}
-
 
 
 	public String getComplement() {
@@ -80,11 +82,9 @@ public class Adresse {
 	}
 
 
-
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
-
 
 
 	public String getCodePostal() {
@@ -92,11 +92,9 @@ public class Adresse {
 	}
 
 
-
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
-
 
 
 	public String getVille() {
@@ -104,11 +102,9 @@ public class Adresse {
 	}
 
 
-
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-
 
 
 	public String getPays() {
@@ -116,11 +112,9 @@ public class Adresse {
 	}
 
 
-
 	public void setPays(String pays) {
 		this.pays = pays;
 	}
-
 
 
 	public Client getClient() {
@@ -128,11 +122,9 @@ public class Adresse {
 	}
 
 
-
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
 
 
 	@Override

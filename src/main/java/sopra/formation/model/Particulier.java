@@ -16,6 +16,15 @@ public class Particulier extends Client {
 	public Particulier() {
 		super();
 	}
+	
+	
+
+	public Particulier(String prenom) {
+		super();
+		this.prenom = prenom;
+	}
+
+
 
 	public String getPrenom() {
 		return prenom;
