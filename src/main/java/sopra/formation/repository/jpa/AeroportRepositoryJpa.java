@@ -1,4 +1,4 @@
-package sopra.formation.repositoryJpa;
+package sopra.formation.repository.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,15 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.model.CompagnieAerienne;
-import sopra.formation.model.CompagnieAerienneVol;
-import sopra.formation.repository.ICompagnieAerienneVolRepository;
+import sopra.formation.model.Aeroport;
 
-public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolRepository {
+import sopra.formation.repository.IAeroportRepository;
 
-	@Override
-	public List<CompagnieAerienneVol> findAll() {
-		List<CompagnieAerienneVol> compagnieAeriennesvols = new ArrayList<CompagnieAerienneVol>();
+public class AeroportRepositoryJpa implements IAeroportRepository {
+
+	public List<Aeroport> findAll() {
+		List<Aeroport> aeroports = new ArrayList<Aeroport>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -26,9 +25,9 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<CompagnieAerienneVol> query = em.createQuery("select cav from CompagnieAerienneVol cav", CompagnieAerienneVol.class);
+			TypedQuery<Aeroport> query = em.createQuery("select a from Aeroport a", Aeroport.class);
 
-			compagnieAeriennesvols = query.getResultList();
+			aeroports = query.getResultList();
 
 			tx.commit();
 		} catch (Exception e) {
@@ -43,13 +42,11 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 
-		return compagnieAeriennesvols;
+		return aeroports;
 	}
 
-
-	@Override
-	public CompagnieAerienneVol findById(Long id) {
-		CompagnieAerienneVol compagnieAerienneVol = null;
+	public Aeroport findById(Long id) {
+		Aeroport aeroport = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -59,7 +56,7 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			tx = em.getTransaction();
 			tx.begin();
 
-			compagnieAerienneVol = em.find(CompagnieAerienneVol.class, id);
+			aeroport = em.find(Aeroport.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,11 +71,10 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 
-		return compagnieAerienneVol;
+		return aeroport;
 	}
 
-	@Override
-	public CompagnieAerienneVol save(CompagnieAerienneVol obj) {
+	public Aeroport save(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -105,8 +101,7 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 		return obj;
 	}
 
-	@Override
-	public void delete(CompagnieAerienneVol obj) {
+	public void delete(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -130,6 +125,5 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 	}
-
 
 }
