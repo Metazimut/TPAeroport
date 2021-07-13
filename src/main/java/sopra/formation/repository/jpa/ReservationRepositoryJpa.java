@@ -12,6 +12,7 @@ import sopra.formation.model.Reservation;
 import sopra.formation.repository.IReservationRepository;
 
 public class ReservationRepositoryJpa implements IReservationRepository {
+	
 	public List<Reservation> findAll() {
 		List<Reservation> reservations = new ArrayList<Reservation>();
 
@@ -43,7 +44,10 @@ public class ReservationRepositoryJpa implements IReservationRepository {
 		return reservations;
 	}
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	public Reservation findById(Integer id) {
 		Reservation reservation = null;
 

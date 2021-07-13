@@ -24,7 +24,11 @@ public class CompagnieAerienne {
 	@Column(name="name")
 	private String nom;
 	@OneToMany(mappedBy="compagnieAerienne")
+<<<<<<< Updated upstream
+	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<CompagnieAerienneVol>(); ;
+=======
 	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<CompagnieAerienneVol>();
+>>>>>>> Stashed changes
 	
 	
 public CompagnieAerienne() {
