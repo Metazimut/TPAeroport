@@ -14,15 +14,15 @@ import sopra.formation.repository.IReservationRepository;
 import sopra.formation.repository.IVilleRepository;
 import sopra.formation.repository.IVolRepository;
 import sopra.formation.repository.jpa.AdresseRepositoryJpa;
+import sopra.formation.repository.jpa.AeroportRepositoryJpa;
 import sopra.formation.repository.jpa.BilletRepositoryJpa;
 import sopra.formation.repository.jpa.ClientRepositoryJpa;
+import sopra.formation.repository.jpa.CompagnieAerienneRepositoryJpa;
+import sopra.formation.repository.jpa.CompagnieAerienneVolRepositoryJpa;
 import sopra.formation.repository.jpa.PassagerRepositoryJpa;
 import sopra.formation.repository.jpa.ReservationRepositoryJpa;
+import sopra.formation.repository.jpa.VilleRepositoryJpa;
 import sopra.formation.repository.jpa.VolRepositoryJpa;
-import sopra.formation.repositoryJpa.AeroportRepositoryJpa;
-import sopra.formation.repositoryJpa.CompagnieAerienneRepositoryJpa;
-import sopra.formation.repositoryJpa.CompagnieAerienneVolRepositoryJpa;
-import sopra.formation.repositoryJpa.VilleRepositoryJpa;
 
 
 public class Application {
