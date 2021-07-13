@@ -1,4 +1,4 @@
-package sopra.formation.repositoryJpa;
+package sopra.formation.repository.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.appli.Application;
+import sopra.formation.Application;
 import sopra.formation.model.Aeroport;
 import sopra.formation.model.CompagnieAerienne;
 import sopra.formation.repository.ICompagnieAerienneRepository;

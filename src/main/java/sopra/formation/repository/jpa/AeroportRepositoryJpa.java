@@ -1,4 +1,4 @@
-package sopra.formation.repositoryJpa;
+package sopra.formation.repository.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,16 +7,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.appli.Application;
+import sopra.formation.Application;
 import sopra.formation.model.Aeroport;
-import sopra.formation.model.Ville;
-import sopra.formation.repository.IVilleRepository;
 
-public class VilleRepositoryJpa implements IVilleRepository {
+import sopra.formation.repository.IAeroportRepository;
 
-	@Override
-	public List<Ville> findAll() {
-		List<Ville> villes = new ArrayList<Ville>();
+public class AeroportRepositoryJpa implements IAeroportRepository {
+
+	public List<Aeroport> findAll() {
+		List<Aeroport> aeroports = new ArrayList<Aeroport>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -26,9 +25,9 @@ public class VilleRepositoryJpa implements IVilleRepository {
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<Ville> query = em.createQuery("select v from Ville v", Ville.class);
+			TypedQuery<Aeroport> query = em.createQuery("select a from Aeroport a", Aeroport.class);
 
-			villes = query.getResultList();
+			aeroports = query.getResultList();
 
 			tx.commit();
 		} catch (Exception e) {
@@ -43,12 +42,11 @@ public class VilleRepositoryJpa implements IVilleRepository {
 			}
 		}
 
-		return villes;
+		return aeroports;
 	}
 
-	@Override
-	public Ville findById(Long id) {
-		Ville ville = null;
+	public Aeroport findById(Long id) {
+		Aeroport aeroport = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -58,7 +56,7 @@ public class VilleRepositoryJpa implements IVilleRepository {
 			tx = em.getTransaction();
 			tx.begin();
 
-			ville = em.find(Ville.class, id);
+			aeroport = em.find(Aeroport.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -73,11 +71,10 @@ public class VilleRepositoryJpa implements IVilleRepository {
 			}
 		}
 
-		return ville;
+		return aeroport;
 	}
 
-	@Override
-	public Ville save(Ville obj) {
+	public Aeroport save(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -104,8 +101,7 @@ public class VilleRepositoryJpa implements IVilleRepository {
 		return obj;
 	}
 
-	@Override
-	public void delete(Ville obj) {
+	public void delete(Aeroport obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -129,7 +125,5 @@ public class VilleRepositoryJpa implements IVilleRepository {
 			}
 		}
 	}
-
-
 
 }

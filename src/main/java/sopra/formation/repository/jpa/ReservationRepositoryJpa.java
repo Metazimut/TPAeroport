@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.application.Application;
+import sopra.formation.Application;
 import sopra.formation.model.Reservation;
 import sopra.formation.repository.IReservationRepository;
 
@@ -43,7 +43,8 @@ public class ReservationRepositoryJpa implements IReservationRepository {
 		return reservations;
 	}
 
-	public Reservation findById(Long id) {
+
+	public Reservation findById(Integer id) {
 		Reservation reservation = null;
 
 		EntityManager em = null;
@@ -123,4 +124,5 @@ public class ReservationRepositoryJpa implements IReservationRepository {
 			}
 		}
 	}
+
 }

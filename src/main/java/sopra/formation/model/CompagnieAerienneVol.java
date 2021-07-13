@@ -23,10 +23,10 @@ public class CompagnieAerienneVol {
 	private String numeroVol;
 	@ManyToOne
 	@JoinColumn(name="cie_id")
-	private List<CompagnieAerienne> compagnieAerienne = new ArrayList<CompagnieAerienne>();
+	private CompagnieAerienne compagnieAerienne;
 	@ManyToOne
 	@JoinColumn(name="vol_id")
-	private List<Vol> vol = new ArrayList<Vol>();
+	private Vol vol;
 	
 public CompagnieAerienneVol() {
 	super();
@@ -53,20 +53,20 @@ public void setNumeroVol(String numeroVol) {
 }
 
 
-public List<Vol> getVols() {
-	return vols;
-}
-
-public void setVols(List<Vol> vols) {
-	this.vols = vols;
-}
-
-public List<CompagnieAerienne> getCompagnieAerienne() {
+public CompagnieAerienne getCompagnieAerienne() {
 	return compagnieAerienne;
 }
 
-public void setCompagnieAerienne(List<CompagnieAerienne> compagnieAerienne) {
+public void setCompagnieAerienne(CompagnieAerienne compagnieAerienne) {
 	this.compagnieAerienne = compagnieAerienne;
+}
+
+public Vol getVol() {
+	return vol;
+}
+
+public void setVol(Vol vol) {
+	this.vol = vol;
 }
 
 @Override

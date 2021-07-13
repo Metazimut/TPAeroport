@@ -1,4 +1,4 @@
-package sopra.formation.repositoryJpa;
+package sopra.formation.repository.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,16 +7,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-import sopra.formation.appli.Application;
-import sopra.formation.model.CompagnieAerienne;
-import sopra.formation.model.CompagnieAerienneVol;
-import sopra.formation.repository.ICompagnieAerienneVolRepository;
+import sopra.formation.Application;
+import sopra.formation.model.Aeroport;
+import sopra.formation.model.Ville;
+import sopra.formation.repository.IVilleRepository;
 
-public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolRepository {
+public class VilleRepositoryJpa implements IVilleRepository {
 
 	@Override
-	public List<CompagnieAerienneVol> findAll() {
-		List<CompagnieAerienneVol> compagnieAeriennesvols = new ArrayList<CompagnieAerienneVol>();
+	public List<Ville> findAll() {
+		List<Ville> villes = new ArrayList<Ville>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -26,9 +26,9 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			tx = em.getTransaction();
 			tx.begin();
 
-			TypedQuery<CompagnieAerienneVol> query = em.createQuery("select cav from CompagnieAerienneVol cav", CompagnieAerienneVol.class);
+			TypedQuery<Ville> query = em.createQuery("select v from Ville v", Ville.class);
 
-			compagnieAeriennesvols = query.getResultList();
+			villes = query.getResultList();
 
 			tx.commit();
 		} catch (Exception e) {
@@ -43,13 +43,12 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 
-		return compagnieAeriennesvols;
+		return villes;
 	}
 
-
 	@Override
-	public CompagnieAerienneVol findById(Long id) {
-		CompagnieAerienneVol compagnieAerienneVol = null;
+	public Ville findById(Long id) {
+		Ville ville = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -59,7 +58,7 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			tx = em.getTransaction();
 			tx.begin();
 
-			compagnieAerienneVol = em.find(CompagnieAerienneVol.class, id);
+			ville = em.find(Ville.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,11 +73,11 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 
-		return compagnieAerienneVol;
+		return ville;
 	}
 
 	@Override
-	public CompagnieAerienneVol save(CompagnieAerienneVol obj) {
+	public Ville save(Ville obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -106,7 +105,7 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 	}
 
 	@Override
-	public void delete(CompagnieAerienneVol obj) {
+	public void delete(Ville obj) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -130,6 +129,7 @@ public class CompagnieAerienneVolRepositoryJpa implements ICompagnieAerienneVolR
 			}
 		}
 	}
+
 
 
 }
