@@ -53,22 +53,7 @@ public void setNumeroVol(String numeroVol) {
 }
 
 
-<<<<<<< Updated upstream
-public CompagnieAerienne getCompagnieAerienne() {
-	return compagnieAerienne;
-}
 
-public void setCompagnieAerienne(CompagnieAerienne compagnieAerienne) {
-	this.compagnieAerienne = compagnieAerienne;
-}
-
-public Vol getVol() {
-	return vol;
-}
-
-public void setVol(Vol vol) {
-	this.vol = vol;
-=======
 public Vol getVol() {
 	return vol;
 }
@@ -83,7 +68,7 @@ public CompagnieAerienne getCompagnieAerienne() {
 
 public void setCompagnieAerienne(CompagnieAerienne compagnieAerienne) {
 	this.compagnieAerienne = compagnieAerienne;
->>>>>>> Stashed changes
+
 }
 
 @Override

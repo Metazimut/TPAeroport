@@ -44,10 +44,7 @@ public class ReservationRepositoryJpa implements IReservationRepository {
 		return reservations;
 	}
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 	public Reservation findById(Integer id) {
 		Reservation reservation = null;
 
