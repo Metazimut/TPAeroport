@@ -24,7 +24,7 @@ public class CompagnieAerienne {
 	@Column(name="name")
 	private String nom;
 	@OneToMany(mappedBy="compagnieAerienne")
-	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<CompagnieAerienneVol>(); ;
+	private List<CompagnieAerienneVol> compagnieAerienneVol = new ArrayList<CompagnieAerienneVol>();
 	
 	
 public CompagnieAerienne() {
